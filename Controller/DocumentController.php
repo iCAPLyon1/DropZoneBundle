@@ -187,13 +187,13 @@ class DocumentController extends DropzoneBaseController
 
         $node = null;
         if ($documentType == 'url') {
-            $document->setUrl($form->getData()['document']);
+            $document->setUrl($form['document']->getData());
         } else if ($documentType == 'file') {
             $node = $this->createFile($dropzone, $drop, $form['document']->getData());
         } else if ($documentType == 'text') {
-            $node = $this->createText($dropzone, $drop, $form->getData()['document']);
+            $node = $this->createText($dropzone, $drop, $form['document']->getData());
         } else if ($documentType == 'resource') {
-            $node = $this->createResource($dropzone, $drop, $form->getData()['document']);
+            $node = $this->createResource($dropzone, $drop, $form['document']->getData());
         } else {
             throw new \ErrorException();
         }
