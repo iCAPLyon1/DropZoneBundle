@@ -17,7 +17,7 @@
                 {% endif %}
             </p>
         {% endif %}
-        {% if dropzone.isAllowDrop %}
+        {% if dropzone.isAllowDrop and drop is not null and not drop.finished %}
             <p class="text-muted">
                 {{ 'Deposit phase'|trans({}, 'icap_dropzone') }}
                 {% if not dropzone.manualPlanning %}
